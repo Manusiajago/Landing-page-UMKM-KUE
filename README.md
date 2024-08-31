@@ -1,4 +1,5 @@
 🌸 Landing Page untuk Bisnis Kue Pacar Saya
+
 Proyek ini adalah landing page yang saya buat untuk mendukung bisnis UMKM kue bolu yang dijalankan oleh pacar saya. Website ini dirancang untuk menampilkan produk-produk kue dengan cara yang menarik dan profesional, membantu meningkatkan visibilitas bisnisnya secara online.
 
 Fitur:
