@@ -1,0 +1,457 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,200;1,400;1,500;1,600;1,700&display=swap');
+
+
+
+
+
+
+
+
+.container {
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+    font-family: 'Poppins', sans-serif;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.ai-center {
+    align-items: center;
+}
+
+.jc-sb {
+    justify-content: space-between;
+}
+
+// Navigation
+.nav-brand {
+    font-family: "Dancing Script", cursive;
+    
+    h1 {
+        a {
+            text-decoration: none;
+            color: rgb(234, 125, 10);
+        }
+    }
+}
+
+.nav-contact {
+    a {
+        text-decoration: none;
+    }
+}
+
+.btn {
+    background: black;
+    border-radius: 20px;
+    padding: 10px 40px;
+    color: white;
+}
+
+@for $i from 1 through 12 {
+    .col#{$i} {
+        width: 100% * $i / 12; 
+        margin: 0;  
+    }
+}
+
+.img-responsive {
+    width: 100%;
+    height: auto;  
+}
+
+.img-radius {
+    border-radius: 20px;
+}
+
+.icon64 {
+    width: 64px;
+}
+
+// Benefit Section
+.benefit {
+    padding: 50px 0;
+     // Menambahkan warna latar belakang yang lembut
+
+    .container {
+        text-align: center;  // Mengatur teks agar berada di tengah
+    }
+
+    .row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;  // Jarak antar kolom
+        flex-wrap: wrap; // Agar elemen-elemen bisa wrap pada ukuran layar kecil
+    }
+
+    .col4 {
+        flex: 1;  // Menjadikan kolom fleksibel dan menyesuaikan dengan lebar container
+        max-width: 30%;  // Membatasi lebar maksimal setiap kolom
+        padding: 20px;
+        background-color: #ffffff; // Menambahkan warna latar belakang putih pada kolom
+        border-radius: 10px;  // Memberikan efek melengkung pada sudut
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  // Memberikan bayangan halus untuk efek kedalaman
+        transition: transform 0.3s ease, box-shadow 0.3s ease;  // Efek transisi saat hover
+
+        &:hover {
+            transform: translateY(-10px);  // Mengangkat kolom saat di-hover
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); // Memperbesar bayangan saat di-hover
+        }
+
+        img.icon64 {
+            margin-bottom: 15px;  // Jarak antara ikon dan teks
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #333333;  // Warna teks
+        }
+
+        p {
+            font-size: 1rem;
+            color: #666666;  // Warna teks deskripsi
+            line-height: 1.6;
+        }
+    }
+}
+
+// Responsive Design
+@media (max-width: 992px) {
+    .benefit .col4 {
+        width: 80%;  // Mengubah lebar kolom pada perangkat tablet
+    }
+}
+
+@media (max-width: 768px) {
+    .benefit .row {
+        flex-direction: column;  // Mengatur kolom agar menumpuk ke bawah pada perangkat mobile
+    }
+
+    .benefit .col4 {
+        max-width: 100%;  // Mengambil seluruh lebar kontainer pada perangkat mobile
+        margin-bottom: 20px;  // Menambah jarak antar kolom
+    }
+}
+
+@media (max-width: 576px) {
+    .btn {
+        padding: 10px 20px;  // Menyesuaikan padding tombol pada perangkat sangat kecil
+    }
+
+    .benefit {
+        padding: 30px 0;  // Mengurangi padding pada bagian benefit
+    }
+
+    .benefit .col4 h3 {
+        font-size: 1.25rem;  // Mengurangi ukuran font judul pada perangkat sangat kecil
+    }
+
+    .benefit .col4 p {
+        font-size: 0.9rem;  // Mengurangi ukuran font deskripsi pada perangkat sangat kecil
+    }
+}
+
+
+// Product Section
+.product {
+    padding: 50px 0;
+    
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+
+    h2 {
+        text-align: center;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 700;
+        font-size: 2.5rem;
+        color: #333;
+        margin: 0 auto 50px auto; // Margin bawah untuk jarak dengan produk
+        position: relative;
+        display: inline-block;
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -10px; // Posisi garis bawah sedikit di bawah teks
+            width: 100%;
+            height: 4px;
+            background-color: rgb(234, 125, 10); // Warna garis bawah
+            border-radius: 5px;
+            transform: translateX(-50%); // Untuk menyesuaikan garis bawah agar tepat di bawah teks
+        }
+    }
+
+    .product-row {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -15px;
+    }
+
+    .product-item {
+        width: calc(33.333% - 30px);
+        padding: 0 15px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+         // Jarak antar baris produk
+        text-align: center;
+        transition: transform 0.3s ease;
+        overflow: hidden;
+
+        &:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px 10px 0 0;
+            margin-bottom: 15px;
+            object-fit: cover;
+        }
+
+        h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.25rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.6;
+        }
+    }
+}
+
+// Responsive Design for Product
+@media (max-width: 992px) {
+    .product .product-item {
+        width: calc(50% - 30px);
+        margin: 15px; // Jarak antara produk pada ukuran layar lebih kecil
+    }
+}
+
+@media (max-width: 768px) {
+    .product .product-item {
+        width: calc(100% - 30px);
+        margin: 15px; // Jarak antara produk pada ukuran layar lebih kecil
+    }
+}
+
+// Tentang Produk Kami Section
+.about-product {
+    padding: 60px 15px;
+    background-color: #FDFDEA;
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .col6 {
+        flex: 1;
+        width: 100%;
+        padding: 15px;
+
+        @media (max-width: 768px) {
+            max-width: 100%;
+            padding: 10px;
+        }
+    }
+
+    .ap-desc {
+        text-align: left;
+
+        @media (max-width: 768px) {
+            text-align: center;
+        }
+
+        h2 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 20px;
+            position: relative;
+            font-size: 2.5rem;
+            line-height: 1.2;
+
+            @media (max-width: 768px) {
+                font-size: 2rem;
+                margin-bottom: 15px;
+            }
+
+            &::after {
+                content: '';
+                display: block;
+                width: 80px;
+                height: 4px;
+                background-color: rgb(234, 125, 10);
+                position: absolute;
+                bottom: -10px;
+                left: 50%;
+                transform: translateX(-50%);
+                border-radius: 2px;
+            }
+        }
+
+        p {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+            text-align: justify;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            max-width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+
+            @media (max-width: 768px) {
+                font-size: 1rem;
+                margin-bottom: 15px;
+                max-width: 90%;
+            }
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 20px;
+            font-family: 'Poppins', sans-serif;
+            color: #555;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+
+            li {
+                display: flex;
+                align-items: center;
+                background: url('https://cdn-icons-png.flaticon.com/512/622/622669.png') no-repeat left center;
+                background-size: 20px;
+                padding-left: 30px;
+                margin-bottom: 10px;
+                line-height: 1.6;
+                font-size: 1rem;
+                max-width: 100%;
+
+                @media (max-width: 768px) {
+                    font-size: 0.9rem;
+                    padding-left: 25px;
+                }
+            }
+        }
+
+        .btn {
+            display: inline-block;
+            background: rgb(234, 125, 10);
+            color: white;
+            border-radius: 25px;
+            padding: 12px 24px;
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            transition: background-color 0.3s;
+            text-align: center;
+
+            &:hover {
+                background: rgb(200, 100, 0);
+            }
+
+            @media (max-width: 768px) {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+        }
+    }
+
+    .ap-img {
+        text-align: center;
+
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            object-fit: cover;
+
+            @media (max-width: 768px) {
+                border-radius: 10px;
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        .row {
+            flex-direction: column;
+        }
+    }
+}
+
+// Footer Styling
+html, body {
+    height: 100%;          // Pastikan html dan body memiliki tinggi 100%
+    margin: 0;            // Hapus margin default
+}
+
+body {
+    display: flex;        // Flexbox untuk body
+    flex-direction: column; // Atur arah kolom
+}
+
+.content {
+    flex: 1;              // Konten utama akan mengisi ruang yang tersisa
+}
+
+.footer {
+    background-color: #1F2937; // Warna latar belakang footer
+    color: #fff;            // Warna teks
+    padding: 20px 0;       // Padding atas dan bawah
+    text-align: center;    // Tengah teks
+    width: 100%;           // Lebar penuh
+
+    .container {
+        max-width: 1200px; // Lebar maksimum container
+        margin: 0 auto;   // Pusatkan container
+        padding: 0 15px;  // Padding kiri dan kanan
+        font-family: 'Poppins', sans-serif; // Font footer
+        font-size: 0.9rem; // Ukuran font
+    }
+
+    p {
+        margin: 0;         // Hapus margin p
+        font-weight: 400;  // Berat font
+        color: #ddd;       // Warna teks lebih cerah dari latar belakang
+
+        @media (max-width: 768px) {
+            font-size: 0.8rem; // Ukuran font untuk perangkat kecil
+        }
+    }
+}
+
+
+
+
